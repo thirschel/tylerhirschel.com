@@ -1,0 +1,89 @@
+
+.word-flipper {
+    position: relative;
+    display: block;
+    margin-left: 16px;
+    color: #FECB5F; 
+    .text {
+       height: 100%;
+       p {
+          display: inline-block;
+          vertical-align: top;
+          margin: 0;
+          .word {
+             user-select:none;
+             position: absolute;
+             width: 220px;
+             opacity: 1;
+             &.to {
+                opacity: 0;
+             }
+ 
+             .letter {
+                user-select:none;
+                display: inline-block;
+                position: relative;
+                transform: translateZ(25px);
+                transform-origin: 50% 50% 25px;
+             }
+          }
+          &.on {
+             .from {
+                .letter {
+                   transform: rotateX(90deg);
+                   animation: wordflip-fromletter .26s cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+                   @for $i from 1 through 50 {
+                    &:nth-child(#{$i}) {
+                      animation-delay: 75ms * ($i - 1);
+                    }
+                  }
+                }
+             }
+             .to {
+                 opacity: 1;
+                transform: rotateX(0deg);
+                animation: wordflip-to 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+                .letter {
+                    transform: rotateX(-90deg);
+                    animation: wordflip-toletter 0.3s 340ms cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+                    @for $i from 1 through 50 {
+                        &:nth-child(#{$i}) {
+                          animation-delay: 75ms * ($i - 1) + 340ms;
+                        }
+                      }
+                }
+             }
+          }
+       }
+    }
+ }
+ 
+ @keyframes wordflip-fromletter {
+    0% {
+        transform: translateZ(25px);
+    }
+
+    100% {
+        transform: rotateX(90deg);
+    }
+ }
+
+ @keyframes wordflip-to{
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+ }
+
+ @keyframes wordflip-toletter {
+    0% {
+        transform: rotateX(-90deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+ }

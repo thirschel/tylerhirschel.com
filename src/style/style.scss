@@ -1,0 +1,234 @@
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "./fonts.scss";
+@import "./variables.scss";
+
+$hero-title-font-size: 4em;
+$hero-title-font-size-vw: 5vw;
+$light-grey:#3c3852;
+$grey-blue:#5D737E;
+$mauve:#E2C2FF;
+
+
+body,
+html {
+  font-family: "PT Sans", serif;
+  padding: 0;
+  margin: 0;
+  background: #f9f9fa;
+  color: $light-grey;
+  overflow-x: hidden;
+}
+
+.pentahedron {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  fill: #3E82F7;
+}
+
+.point {
+  fill: #8491A3;
+}
+
+.rhombus {
+  fill: #2DA94F;
+  stroke: #2DA94F;
+}
+
+.x {
+  fill: #FDBD00;
+}
+
+.circle {
+  fill: #ED412D;
+}
+
+svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  transform: translateZ(0px);
+}
+
+.-dark {
+  background: #000;
+  color: #f9f9fa;
+}
+
+.hero-content {
+  margin-bottom: 40vh;
+}
+
+.hero-container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+}
+
+
+
+.hero-container>.hero-wording {}
+
+.hero-container>.hero-wording>.hero-title-small {
+  margin-bottom: 1em;
+  padding: 0;
+}
+
+.hero-container>.hero-wording>.hero-title {
+  margin: 0;
+  padding: 0;
+  font-size: 4em;
+  color: $matte-blue;
+}
+
+.hero-container>.hero-wording>.hero-subtitle {
+  margin: 0;
+  padding: 0;
+  font-size: 4em;
+  color: $light-grey;
+  display: flex;
+}
+
+.hero-container>.hero-wording>.hero-explanation {
+  color: $light-grey;
+}
+
+
+.btn {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  border: none;
+  padding: 1.5rem 3rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.btn::before,
+.btn::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-btn {
+  --y: 33%;
+  --x: 92%;
+  background: $mauve;
+  transition: transform 125ms ease, box-shadow 125ms ease;
+  background: radial-gradient(circle at var(--x) var(--y), #8e79f6, $mauve);
+  height: 3.5rem;
+  font-weight: bold;
+  border-radius: 99999999px;
+  border: 0;
+  padding: 0 2.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.contact-btn {
+  font-weight: bold;
+  background: none;
+  color: #FFF;
+}
+
+.contact-btn::before {
+  --y: 33%;
+  --x: 92%;
+  content: '';
+  z-index: -1;
+  border-radius: 2px;
+  background: radial-gradient(circle at var(--x) var(--y), #8e79f6, $mauve);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 85% 70%, 80% 70%, 75% 70%, 0 70%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 85% 70%, 80% 70%, 75% 70%, 0 70%);
+  transition: clip-path 0.3s cubic-bezier(0.7, 0, 0.2, 1), -webkit-clip-path 0.3s cubic-bezier(0.7, 0, 0.2, 1), transform 0.3s ease;
+}
+
+.contact-btn:hover::before {
+  transform: translate3d(0, -10px, 0);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 85% 70%, 86% 100%, 75% 70%, 0 70%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 85% 70%, 86% 100%, 75% 70%, 0 70%);
+}
+
+.contact-btn span {
+  display: block;
+  position: relative;
+}
+
+.contact-btn>span {
+  transition: transform 0.3s;
+  transform: translate3d(0, -0.556rem, 0);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.contact-btn:hover>span {
+  transform: translate3d(0, -1.111rem, 0);
+}
+
+.contact-btn:hover>span>span {
+  animation: MoveUpInitial 0.15s forwards, MoveUpEnd 0.15s forwards 0.15s;
+}
+
+
+@keyframes MoveUpInitial {
+  to {
+    transform: translate3d(0, -105%, 0);
+  }
+}
+
+@keyframes MoveUpEnd {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .container {
+    width: calc(100% - (var(--bs-gutter-x, 0.75rem) * 2));
+  }
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-container>.hero-wording {
+    grid-row: 2;
+  }
+
+  .hero-container>.hero-wording>.hero-title {
+    padding: 0 0 0 2vw;
+    font-size: 14vw;
+  }
+
+  .hero-container>.hero-wording>.hero-subtitle {
+    padding: 0 0 0 2vw;
+    font-size: 9vw;
+  }
+
+  .hero-container>.hero-wording>.hero-explanation {
+    padding: 0 2vw;
+  }
+
+  .hero-container>.hero-image>img {
+    max-width: 75%;
+    height: auto;
+    margin: 0 25% 0 9%;
+    display: block;
+  }
+}

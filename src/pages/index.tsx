@@ -1,10 +1,7 @@
-import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react"
-import { Subject } from "rxjs";
 import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
 import Projects from "../components/projects/projects";
-import WordFlipper from "../components/word-flipper/word-flipper";
 import '../style/style.scss'; 
 import { ParticleEffect } from '../components/particle/particle';
 import {onMount, setupPageContent} from '../scripts/page-effects';

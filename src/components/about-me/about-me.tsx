@@ -1,10 +1,8 @@
 import * as React from "react"
-import { DarkModeContext } from "../../pages/index";
 import "./about-me.scss";
 
 const AboutMe = () => {
   const [toggleAmount, setToggleAmount] = React.useState(0);
-  const context:any = React.useContext(DarkModeContext);
 
   return (
     <section className="about-me -transition" id="aboutMe">

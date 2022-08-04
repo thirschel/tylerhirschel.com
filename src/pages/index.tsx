@@ -7,12 +7,10 @@ import {onMount, setupPageContent} from '../scripts/page-effects';
 import AboutMe from "../components/about-me/about-me";
 import Hero from "../components/hero/hero";
 import '../style/style.scss'; 
-
-export const DarkModeContext = React.createContext({});
+import ThemeToggle from "../components/theme-toggle/theme-toggle";
 
 const IndexPage = () => {
   const [darkMode, setDarkMode] = React.useState(false);
-
   ParticleEffect();
   onMount();
   setupPageContent();
@@ -22,7 +20,6 @@ const IndexPage = () => {
   }
 
   return (
-    <DarkModeContext.Provider value={{useDarkMode: darkMode, saveDarkMode}}>
       <main className={darkMode ? '-dark': ' '}>
         <title>Tyler Hirschel - Software Engineer</title>
         <Header></Header>
@@ -30,8 +27,8 @@ const IndexPage = () => {
         <AboutMe></AboutMe>
         <Projects></Projects>
         <Footer></Footer>
+        <ThemeToggle checked={darkMode} setter={saveDarkMode} size={40}></ThemeToggle>
       </main>
-    </DarkModeContext.Provider>
   )
 }
 

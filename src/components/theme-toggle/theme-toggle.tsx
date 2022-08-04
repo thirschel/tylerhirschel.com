@@ -1,6 +1,5 @@
 import * as React from "react"
 import {useSpring, animated} from "@react-spring/web";
-import { DarkModeContext } from "../../pages";
 import "./theme-toggle.scss";
 
 export const defaultProperties = {
@@ -46,6 +45,7 @@ export const defaultProperties = {
 type SVGProps = Omit<React.HTMLAttributes<HTMLOrSVGElement>, 'onChange'>;
 interface Props extends SVGProps {
 checked?: boolean;
+setter: (value:boolean) => void;
 style?: React.CSSProperties;
 size?: number;
 animationProperties?: typeof defaultProperties;
@@ -54,6 +54,7 @@ sunColor?: string;
 }
 export const ThemeToggle: React.FC<Props>  = ({
     children,
+    setter,
     checked = false,
     size = 24,
     animationProperties = defaultProperties,
@@ -62,7 +63,6 @@ export const ThemeToggle: React.FC<Props>  = ({
     style,
     ...rest
   }) => {
-    const context:any = React.useContext(DarkModeContext);
 
     const properties = React.useMemo(() => {
       if (animationProperties !== defaultProperties) {
@@ -91,7 +91,7 @@ export const ThemeToggle: React.FC<Props>  = ({
       config: animationProperties.springConfig,
     });
   
-    const toggle = () => context.saveDarkMode(!checked);
+    const toggle = () => setter(!checked);
   
     const uniqueMaskId = `circle-mask`;
     

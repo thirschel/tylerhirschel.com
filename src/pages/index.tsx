@@ -21,7 +21,6 @@ const IndexPage = () => {
 
   return (
       <main className={darkMode ? '-dark': ' '}>
-        <title>Tyler Hirschel - Software Engineer</title>
         <Header></Header>
         <Hero/>
         <AboutMe></AboutMe>
@@ -33,3 +32,12 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export function Head() {
+  return (
+    <>
+      <title>Tyler Hirschel - Software Engineer</title>
+      <meta name="description" content="Chicago based, full stack, software engineer and architect"></meta>
+    </>
+  )
+}

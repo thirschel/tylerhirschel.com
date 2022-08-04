@@ -13,7 +13,7 @@
           .word {
              user-select:none;
              position: absolute;
-             width: 220px;
+             width: 450px;
              opacity: 1;
              &.to {
                 opacity: 0;
@@ -85,5 +85,11 @@
 
     100% {
         transform: rotateX(0deg);
+    }
+ }
+
+ .-dark {
+    .word-flipper {
+       color: #f1fa8c;
     }
  }

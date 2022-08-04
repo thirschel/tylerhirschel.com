@@ -15,7 +15,7 @@ class WordFlipper extends React.Component<ITestProps, ITestState> {
     wordChangeInterval: any;
     constructor(props: ITestProps) {
       super(props);
-      const words =  ["for\u00a0web", "to\u00a0scale", "to\u00a0last", "responsively"];
+      const words =  ["things\u00a0for\u00a0web", "scaleable\u00a0things", "things\u00a0to\u00a0last", "reliable\u00a0things", "secure\u00a0things"];
       this.state = {
         fromLetters: [],
         toLetters: words[0].split(''),
@@ -26,7 +26,7 @@ class WordFlipper extends React.Component<ITestProps, ITestState> {
   
     componentDidMount() {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-console.log("Dark mode supported:", isDarkMode);
+        console.log("Dark mode supported:", isDarkMode);
         this.wordChangeInterval = setInterval(() => {
             this.setState({
                 fromLetters: this.state.toLetters,
@@ -39,7 +39,7 @@ console.log("Dark mode supported:", isDarkMode);
                     isTransitioning: true
                 });
              }, 10);
-        }, 4000);
+        }, 5000);
             
     }
   

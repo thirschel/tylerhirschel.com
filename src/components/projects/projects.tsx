@@ -2,6 +2,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import * as React from "react"
 import "./projects.scss";
 import yankeeswapGif from "../../assets/images/yankeeswap.gif";
+import { ExternalLinkIcon, GithubIcon } from "../icons/icons";
 declare var window: any;
 
 const Projects = () => {
@@ -16,7 +17,7 @@ const Projects = () => {
     window.open('https://github.com/thirschel/Advent-Of-Code', '_blank').focus();
   }
   return (
-    <div className="projects container">
+    <div className="projects container" id="projects">
         <div className="project -transition">
           <div className="project-image -box-shadow">
             <h3 className="project-title-sm">MeMetrics</h3>
@@ -33,8 +34,12 @@ const Projects = () => {
               <li>SQL</li>
             </ul>
             <div className="project-link">
-              <a href="https://www.memetrics.net"><StaticImage src="../../assets/images/external-link.svg" alt="external link icon" loading="eager" /></a>
-              <a href="https://github.com/thirschel/memetrics-ui"><StaticImage src="../../assets/images/github.svg" alt="github icon" loading="eager" /></a>
+              <a href="https://www.memetrics.net">
+                <ExternalLinkIcon/>
+              </a>
+              <a href="https://github.com/thirschel/memetrics-ui">
+                <GithubIcon/>
+              </a>
             </div>
           </div>
         </div>
@@ -54,7 +59,9 @@ const Projects = () => {
               <li>Heroku</li>
             </ul>
             <div className="project-link">
-              <StaticImage src="../../assets/images/external-link.svg" alt="external link icon" loading="eager" />
+              <a href="https://github.com/thirschel/bouncemeet">
+                <GithubIcon/>
+              </a>
             </div>
           </div>
         </div>
@@ -73,7 +80,9 @@ const Projects = () => {
               <li>WebSockets</li>
             </ul>
             <div className="project-link">
-              <a href="https://github.com/thirschel/yankee-swap"><StaticImage src="../../assets/images/github.svg" alt="github icon" loading="eager" /></a>
+              <a href="https://github.com/thirschel/yankee-swap">
+                <GithubIcon/>
+              </a>
             </div>
           </div>
         </div>

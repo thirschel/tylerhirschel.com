@@ -38,3 +38,19 @@ export const setupPageContent = (): void => {
     };
   $(window).on('scroll', checkPageContent);
 };
+
+const smoothJump = (i: number) => {
+  $('body, html').animate({ scrollTop: `${i}px` }, 1200);
+};
+
+export const jumpToAboutMeSection = () => {
+  smoothJump($('#aboutMe').offset().top - $('.header').outerHeight() + 1);
+};
+
+export const jumpToProjectsSection = () => {
+  smoothJump($('#projects').offset().top - $('.header').outerHeight() + 1);
+};
+
+export const jumpToContactSection = () => {
+  smoothJump($('#contact').offset().top - $('.header').outerHeight() + 1);
+};

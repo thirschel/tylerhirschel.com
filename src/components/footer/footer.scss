@@ -50,7 +50,12 @@
     transform: translateY(-3px);
   }
 }
-/* Animation */
+.footer-content .email {
+  color: #4b5ebe;
+}
+.footer-content .source-code {
+  color: #4b5ebe;
+}
 
 .parallax > use {
   animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
@@ -68,7 +73,6 @@
     transform: translate3d(85px,0,0);
   }
 }
-/*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
     height:40px;
@@ -79,5 +83,25 @@
   }
   h1 {
     font-size:24px;
+  }
+}
+.-dark {
+  .footer >.footer-content {
+    background:#6272a4;
+  }
+  .footer use {
+    fill: #6272a4;
+  }
+  .footer >.footer-content .footer-title {
+    color:#ffb86c;
+  }
+  .footer >.footer-content .email {
+    color: #50fa7b;
+  }
+  .footer >.footer-content .source-code {
+    color: #44475a;
+  }
+  .footer .footer-links > a > svg {
+    stroke: #ff79c6;
   }
 }

@@ -7,7 +7,7 @@ const AboutMe = () => {
   const context:any = React.useContext(DarkModeContext);
 
   return (
-    <section className="about-me -transition">
+    <section className="about-me -transition" id="aboutMe">
       <div className="container">
         <h3 className="about-header -animation-item">A little about me</h3>
         <p className="about-text -animation-item">

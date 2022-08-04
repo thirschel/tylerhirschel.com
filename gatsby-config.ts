@@ -14,7 +14,6 @@ const config: GatsbyConfig = {
     options: {
       "name": "images",
       "path": "./src/assets/images/",
-      ignore: [`**/.svg$`],
     },
     __key: "images"
   }

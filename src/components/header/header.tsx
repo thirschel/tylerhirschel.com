@@ -1,4 +1,3 @@
-import { StaticImage } from "gatsby-plugin-image"
 import * as React from "react"
 import ThemeToggle from "../theme-toggle/theme-toggle";
 import { DarkModeContext } from "../../pages/index";
@@ -7,8 +6,6 @@ import { Logo } from '../icons/icons';
 import {jumpToAboutMeSection, jumpToProjectsSection, jumpToContactSection} from '../../scripts/page-effects';
 
 const Header = () => {
-  const [isDarkMode, setDarkMode] = React.useState(false);
-  const [toggleAmount, setToggleAmount] = React.useState(0);
   const context:any = React.useContext(DarkModeContext);
 
   return (

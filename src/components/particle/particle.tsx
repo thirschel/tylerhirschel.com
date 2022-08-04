@@ -1,4 +1,5 @@
-import * as $ from 'jQuery';
+import * as $ from 'jquery';
+declare var window: any;
 
 class Particle {
     private svg: any;
@@ -78,7 +79,7 @@ class Particle {
     let particles: Array<Particle> = []
     
     setInterval(function(){
-      if (document.visibilityState === 'visible'){
+      if (typeof document !== "undefined" && document.visibilityState === 'visible'){
         particles.push(
           new Particle(data[randomInt(0,data.length-1)], {
            "x": (Math.random() * $('.help-card').width()),
@@ -92,7 +93,15 @@ class Particle {
       particles = particles.filter(function(p){
         return p.move()
       })
-      requestAnimationFrame(update.bind(this))
+      // Gatsby gets mad if you don't check if window is defined
+      if(typeof window === "undefined" || !window.requestAnimationFrame) {
+        setTimeout(()=>{
+          update.bind(this)
+        },100);
+      }
+      else {
+        window.requestAnimationFrame(update.bind(this));
+      }
     }
     update()
 }

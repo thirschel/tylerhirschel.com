@@ -1,4 +1,4 @@
-import $ from 'jQuery';
+import $ from 'jquery';
 
 const OFFSET = 0.8;
 const SHOWN_CLASS = '-shown';
@@ -19,24 +19,28 @@ const showContent = (elements: JQuery<HTMLElement>) => {
 };
 
 export const onMount = () => {
-  setTimeout(() => {
-    $('.hero-container').addClass('-shown');
-  }, 650);
+  if(typeof window !== "undefined") {
+    setTimeout(() => {
+      $('.hero-container').addClass('-shown');
+    }, 650);
+  }
 };
 
 export const setupPageContent = (): void => {
-  const checkPageContent = !window.requestAnimationFrame
-    ? () => {
-      setTimeout(() => {
-        showContent($('.-transition'));
-      }, 100);
-    }
-    : () => {
-      window.requestAnimationFrame(() => {
-        showContent($('.-transition'));
-      });
-    };
-  $(window).on('scroll', checkPageContent);
+  if(typeof window !== "undefined") {
+    const checkPageContent = !window.requestAnimationFrame
+      ? () => {
+        setTimeout(() => {
+          showContent($('.-transition'));
+        }, 100);
+      }
+      : () => {
+        window.requestAnimationFrame(() => {
+          showContent($('.-transition'));
+        });
+      };
+    $(window).on('scroll', checkPageContent);
+  }
 };
 
 const smoothJump = (i: number) => {

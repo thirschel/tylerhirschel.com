@@ -12,7 +12,7 @@ export const DarkModeContext = React.createContext({});
 
 const IndexPage = () => {
   ParticleEffect();
-  const [darkMode, setDarkMode] = React.useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark2)').matches);
+  const [darkMode, setDarkMode] = React.useState(typeof window !== "undefined" && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
   onMount();
   setupPageContent();
  

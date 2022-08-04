@@ -9,6 +9,7 @@ import '../style/style.scss';
 import { ParticleEffect } from '../components/particle/particle';
 import HeroImg from "../assets/images/hero.png";
 import {onMount, setupPageContent} from '../scripts/page-effects';
+import AboutMe from "../components/about-me/about-me";
 
 export const DarkModeContext = React.createContext({});
 
@@ -43,7 +44,7 @@ const IndexPage = () => {
 
           <button className="btn contact-btn"><span><span>Lets Talk</span></span></button>
         </div>
-
+        <AboutMe></AboutMe>
         <Projects></Projects>
         <Footer></Footer>
       </main>

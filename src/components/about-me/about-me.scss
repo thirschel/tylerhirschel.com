@@ -1,0 +1,22 @@
+@import "../../style/mixins.scss";
+
+.about-me {
+  background: #f6f5ff;
+  padding: 4em 0;
+  margin-bottom: 20vh;
+}
+
+.about-me .about-header {
+  font-size: 2em;
+  transform: translate3d(0, 100%, 0) rotateX(90deg);
+}
+
+.about-text {
+  transform: translate3d(0, 100%, 0) rotateX(90deg);
+}
+
+.about-me.-shown {
+  .-animation-item {
+    @include transitionInUpStaggered(2000ms, 1,4, 200, 200);
+  }
+}

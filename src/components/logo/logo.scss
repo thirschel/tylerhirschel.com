@@ -1,0 +1,45 @@
+.logo {
+    position: relative;
+}
+
+.t-line,
+.h-line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 45px;
+    animation: dash 3000ms ease-in-out forwards
+}
+
+.t-line {
+    stroke-dasharray: 1550;
+    stroke-dashoffset: 1550;
+}
+
+.h-line {
+    stroke-dasharray: 1150;
+    stroke-dashoffset: 1150;
+}
+
+.t-line-white,
+.h-line-white {
+    stroke: #FFF;
+    animation: none;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.-dark {
+    .t-line-black,
+    .h-line-black {
+        animation: none;
+    }
+
+    .t-line-white,
+    .h-line-white {
+        animation: dash 3000ms ease-in-out forwards;
+    }
+}

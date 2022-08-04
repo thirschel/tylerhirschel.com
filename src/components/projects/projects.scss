@@ -97,8 +97,8 @@
 }
 
 .project > .project-image  {
-  transform: translate3d(0,100%,0) rotateX(90deg);
-  transition: ease-in-out .3s;
+  opacity: 0;
+  transition: 600ms ease-in opacity, 300ms ease-in-out transform;
   &:hover {
     transform: translateY(-10px);
   }
@@ -110,7 +110,7 @@
 
 .project.-shown {
   .project-image {
-    @include transitionInUp(2000ms);
+    opacity: 1;
     transition-delay: 250ms;
   }
 

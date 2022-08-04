@@ -1,0 +1,15 @@
+@mixin transitionInUp($duration: 2000ms) {
+    transform: translate3d(0, 0%, 0) rotateX(0deg);
+    transition: $duration cubic-bezier(0.16, 1, 0.3, 1) transform, 0.3s ease-in-out color;
+}
+  
+@mixin transitionInUpStaggered($duration: 2000ms, $nth:1,$items:2,$initial:0,$step:100) {
+    @for $i from $nth through $items {
+        @include transitionInUp($duration);
+
+        &:nth-child(#{$i}) {
+        transition-delay: #{$initial}ms;
+        }
+        $initial: $initial + $step;
+    }
+}

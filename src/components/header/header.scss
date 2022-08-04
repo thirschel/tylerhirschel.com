@@ -1,75 +1,85 @@
 .header {
-    margin-bottom: 6em;
+  margin-bottom: 6em;
 }
 
-.header > .header-row {
-    display: flex;
-    align-items: center;
+.header>.header-row {
+  display: flex;
+  align-items: center;
 }
 
-.header > .header-row > .header-logo-wrapper{
-    width: 20%;
-    padding: 0;
-    margin: 0;
+.header>.header-row>.header-logo-wrapper {
+  width: 20%;
+  padding: 0;
+  margin: 0;
 }
 
-.header > .header-row > .header-links{
-    width: 80%;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding: 0;
-    margin: 0;
+.header>.header-row>.header-links {
+  width: 80%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0;
+  margin: 0;
 }
 
-@mixin transitionInUpStaggered($duration: 2000ms, $nth:1,$items:2,$initial:0,$step:100) {
-    @for $i from $nth through $items {
-      @include transitionInUp($duration);
-  
-      &:nth-of-type(#{$i}) {
-        transition-delay: #{$initial}ms;
-      }
-      $initial: $initial + $step;
+.header>.header-row>.header-links>li {
+  margin-right: 4em;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0;
+  animation: HeaderLinksIn 1250ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  position: relative;
+
+  @for $i from 1 through 50 {
+    &:nth-child(#{$i}) {
+      animation-delay: 100ms * ($i - 1) + 500ms;
     }
   }
 
-  @mixin transitionInUp($duration: 2000ms) {
-    transform: translate3d(0, 0%, 0) rotateX(0deg);
-    transition: $duration cubic-bezier(0.16, 1, 0.3, 1) transform;
+  &::after {
+    content: '';
+    height: 2px;
+    width: 0px;
+    background-color: #FECB5F;
+    transition: 650ms all cubic-bezier(0.16, 1, 0.3, 1);
+    position: absolute;
+    bottom: -2px;
+    left: 0;
   }
 
-.header > .header-row > .header-links > li{
-    margin-right: 4em;
-    cursor: pointer;
-    font-weight: bold;
-    opacity: 0;
-    animation: HeaderLinksIn 1250ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    @for $i from 1 through 50 {
-        &:nth-child(#{$i}) {
-          animation-delay: 100ms * ($i - 1) + 500ms;
-        }
-      }
-    &:last-child {
-        margin-right: 0;
+  &:hover{
+    &::after {
+      width: 100%;
     }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 @keyframes HeaderLinksIn {
-    0% {
-		transform: translate3d(0, 100%, 0) rotateX(90deg);
-	}
-	100% {
-        opacity: 1;
-		transform: translate3d(0, 0%, 0) rotateX(0deg);
-	}
+  0% {
+    transform: translate3d(0, 100%, 0) rotateX(90deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0%, 0) rotateX(0deg);
+  }
 }
 
 @media screen and (max-width: 760px) {
-  .header > .header-row > .header-logo-wrapper{
+  .header {
+    margin-bottom: 2em;
+  }
+
+  .header>.header-row>.header-logo-wrapper {
     padding: initial;
   }
-  .header > .header-row > .header-links{
+
+  .header>.header-row>.header-links {
     width: 65%;
     list-style: none;
     display: flex;
@@ -77,5 +87,15 @@
     justify-content: end;
     padding: 0;
     margin: 0;
-}
+  }
+
+  .header>.header-row>.header-links > li {
+    margin-right: 2em;
+  }
+
+  .header > .header-row > .header-logo-wrapper > img {
+    height: 50px;
+    width: 70px;
+    object-fit: contain;
+  }
 }

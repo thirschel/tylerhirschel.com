@@ -17,8 +17,9 @@ const Projects = () => {
   }
   return (
     <div className="projects container">
-        <div className="project">
-          <div className="project-image">
+        <div className="project -transition">
+          <div className="project-image -box-shadow">
+            <h3 className="project-title-sm">MeMetrics</h3>
             <StaticImage src="../../assets/images/memetrics.png" alt="MeMetrics website image" loading="eager" />
           </div>
           <div className="project-info">
@@ -37,8 +38,9 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div className="project">
-          <div className="project-image -no-box-shadow">
+        <div className="project -transition">
+          <div className="project-image">
+            <h3 className="project-title-sm">BounceMeet</h3>
             <StaticImage src="../../assets/images/bouncemeet.png" alt="MeMetrics website image" loading="eager" />
           </div>
           <div className="project-info">
@@ -56,8 +58,9 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div className="project">
-          <div className="project-image">
+        <div className="project -transition">
+          <div className="project-image -box-shadow">
+            <h3 className="project-title-sm">YankeeSwap</h3>
             <img src={yankeeswapGif} alt="yankeeswap game image" />
           </div>
           <div className="project-info">
@@ -74,17 +77,14 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div className="other-repos">
-
-          
-        <div className="project-card help-card">
-            <div className="help-text">
-              <h2>Find more projects on my Github</h2>
-              <button onClick={navigateToGithub} className="btn project-btn">VIEW GITHUB</button>
-            </div>
+        <div className="other-repos -transition">
+          <div className="project-card help-card -transition">
+              <div className="help-text">
+                <h2>Find more projects on my Github</h2>
+                <button onClick={navigateToGithub} className="btn project-btn">VIEW GITHUB</button>
+              </div>
           </div>
-
-          <div className="project-card" onClick={navigateToAoc} >
+          <div className="project-card -transition" onClick={navigateToAoc} >
             <h3 className="project-title">Advent of Code</h3>
             <p className="project-description">Advent of Code is a series of small programming puzzles for a variety of skill levels</p>
             <ul className="project-tech">
@@ -94,8 +94,7 @@ const Projects = () => {
               <StaticImage src="../../assets/images/aoc.png" alt="Advent of Code tree" loading="eager" />
             </div>
           </div>
-
-          <div className="project-card" onClick={navigateToDotNetTemplate} >
+          <div className="project-card -transition" onClick={navigateToDotNetTemplate} >
             <h3 className="project-title">.NET CQRS Microservice Template</h3>
             <p className="project-description">A .NET template to quickly scaffold new microservice apis using clean architecture</p>
             <ul className="project-tech">

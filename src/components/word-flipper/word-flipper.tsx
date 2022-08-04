@@ -15,7 +15,7 @@ class WordFlipper extends React.Component<ITestProps, ITestState> {
     wordChangeInterval: any;
     constructor(props: ITestProps) {
       super(props);
-      const words =  ["for\u00a0web", "to\u00a0scale", "to\u00a0last", "reliably"];
+      const words =  ["for\u00a0web", "to\u00a0scale", "to\u00a0last", "responsively"];
       this.state = {
         fromLetters: [],
         toLetters: words[0].split(''),

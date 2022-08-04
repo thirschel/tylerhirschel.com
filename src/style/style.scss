@@ -6,13 +6,14 @@
 @import "../../node_modules/bootstrap/scss/containers";
 @import "./fonts.scss";
 @import "./variables.scss";
+@import "./mixins.scss";
 
 $hero-title-font-size: 4em;
 $hero-title-font-size-vw: 5vw;
 $light-grey:#3c3852;
 $grey-blue:#5D737E;
 $mauve:#E2C2FF;
-
+$transitionInUp: translate3d(0, 100%, 0) rotateX(90deg);
 
 body,
 html {
@@ -72,6 +73,73 @@ svg {
   margin: 0 auto;
 }
 
+.hero-container .-animation-item {
+  transform: $transitionInUp;
+}
+
+.hero-container > .hero-image {
+  opacity: 0;
+  transition: 1000ms ease-in opacity;
+  transition-delay: 500ms;
+}
+
+.hero-container {
+  &.-shown {
+    .-animation-item {
+      @include transitionInUpStaggered(2000ms, 1,3, 200, 100);
+    }
+    .hero-image {
+      opacity: 1;
+    }
+  }
+}
+
+.header-logo-wrapper > svg{
+  width: 51px;
+height: 40px;
+}
+
+.cls {
+  fill: none;
+  stroke: #000;
+  stroke-width: 45px;
+  animation: dash 3000ms ease-in-out forwards
+}
+
+.cls-1,
+.cls-3 {
+  stroke-dasharray: 1550;
+  stroke-dashoffset: 1550;
+}
+
+.cls-2,
+.cls-4 {
+  stroke-dasharray: 1150;
+  stroke-dashoffset: 1150;
+}
+
+.cls-3,
+.cls-4 {
+  stroke: #FFF;
+  animation:none;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.-dark {
+  .cls-1,
+  .cls-2 {
+    animation: none;
+  }
+  .cls-3,
+  .cls-4 {
+    animation: dash 3000ms ease-in-out forwards;
+  }
+} 
 
 
 .hero-container>.hero-wording {}
@@ -203,6 +271,9 @@ svg {
   .container {
     width: calc(100% - (var(--bs-gutter-x, 0.75rem) * 2));
   }
+  .hero-content {
+    margin-bottom: 10vh;
+  }
   .hero-container {
     grid-template-columns: 1fr;
   }
@@ -230,5 +301,16 @@ svg {
     height: auto;
     margin: 0 25% 0 9%;
     display: block;
+  }
+}
+
+@keyframes ItemAnimateIn {
+  0% {
+    transform: translate3d(0, 100%, 0) rotateX(90deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0%, 0) rotateX(0deg);
   }
 }

@@ -2,6 +2,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import * as React from "react"
 import "./projects.scss";
 import yankeeswapGif from "../../assets/images/yankeeswap.gif";
+import yankeeswapWebm from  "../../assets/images/yankeeswap.webm";
 import { ExternalLinkIcon, GithubIcon } from "../icons/icons";
 declare var window: any;
 
@@ -68,7 +69,9 @@ const Projects = () => {
         <div className="project -transition">
           <div className="project-image -box-shadow">
             <h3 className="project-title-sm">YankeeSwap</h3>
-            <img src={yankeeswapGif} alt="yankeeswap game image" />
+            <video autoPlay loop>
+              <source src={yankeeswapWebm} type="video/webm" />
+            </video>
           </div>
           <div className="project-info">
             <h3 className="project-title">YankeeSwap</h3>

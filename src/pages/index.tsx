@@ -10,17 +10,13 @@ import '../style/style.scss';
 import ThemeToggle from "../components/theme-toggle/theme-toggle";
 
 const IndexPage = () => {
-  var localStorageDarkModeValue = typeof localStorage !== 'undefined' ? localStorage.getItem('darkMode') : null;
-  const [darkMode, setDarkMode] = React.useState(localStorageDarkModeValue ? localStorageDarkModeValue === 'true' ? true : false : false);
+  const [darkMode, setDarkMode] = React.useState(false);
   ParticleEffect();
   onMount();
   setupPageContent();
  
   const saveDarkMode = (value: boolean) => {
     setDarkMode(value);
-    if(typeof localStorage !== 'undefined') {
-      localStorage.setItem('darkMode', value.toString());
-    }
   }
 
   return (

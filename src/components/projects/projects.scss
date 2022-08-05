@@ -96,6 +96,10 @@
   grid-column: 1 / 8;
 }
 
+.project > .project-image > video {
+  width: 100%;
+}
+
 .project > .project-image  {
   opacity: 0;
   transition: 600ms ease-in opacity, 300ms ease-in-out transform;

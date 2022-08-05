@@ -17,7 +17,7 @@
 
 .about-me.-shown {
   .-animation-item {
-    @include transitionInUpStaggered(2000ms, 1,4, 200, 200);
+    @include transitionInUpStaggered(1000ms, 1,4, 200, 200);
   }
 }
 

@@ -25,7 +25,7 @@
 .hero-container {
     &.-shown {
         .-animation-item {
-            @include transitionInUpStaggered(2000ms, 1, 4, 200, 150);
+            @include transitionInUpStaggered(1500ms, 1, 4, 200, 150);
         }
 
         .hero-image {

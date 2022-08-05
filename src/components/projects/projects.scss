@@ -115,26 +115,26 @@
   }
 
   .project-info > .project-title {
-    @include transitionInUp(2000ms);
+    @include transitionInUp(1000ms);
     transition-delay: 350ms;
   }
 
   .project-image > .project-title-sm {
-    @include transitionInUp(2000ms);
+    @include transitionInUp(1000ms);
     transition-delay: 150ms;
   }
 
   .project-info > .project-description {
-    @include transitionInUp(2000ms);
+    @include transitionInUp(1000ms);
     transition-delay: 450ms;
   }
   
   .project-info > .project-tech > li {
-    @include transitionInUpStaggered(2000ms, 1, 10, 600, 100);
+    @include transitionInUpStaggered(1000ms, 1, 10, 400, 100);
   }
 
   .project-info > .project-link {
-    @include transitionInUpStaggered(2000ms, 1, 10, 800, 100);
+    @include transitionInUpStaggered(1000ms, 1, 10, 600, 100);
   }
   &:hover {
     .project-image {
@@ -234,7 +234,7 @@
 
 .other-repos.-shown {
     .project-card {
-      @include transitionInUp(2000ms);
+      @include transitionInUp(1000ms);
       &:first-child {
         transition-delay: 100ms;
       }

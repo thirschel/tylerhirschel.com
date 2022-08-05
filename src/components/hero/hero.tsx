@@ -19,7 +19,7 @@ const Hero = () => {
               <button onClick={jumpToContactSection} className="btn contact-btn -animation-item"><span><span>Lets Talk</span></span></button>
             </div>
             <div className="hero-image">
-              <img src={HeroImg} alt="Tyler Hirschel logo" />
+              <img src={"hero.webp"} alt="Tyler Hirschel logo" /> 
             </div>
           </div>
 

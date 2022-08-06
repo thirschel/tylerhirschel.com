@@ -15,7 +15,7 @@ const AboutMe = () => {
           In the 10+ years I've been working to create software, I've been resposible for leading teams, architecting long term solutions, and scaling and modernizing existing solutions for many different industries all with unique problem sets. 
           I've come up with solutions for the grocery industry to be able to budget all of their promotions across all of their stores. 
           I've hired and led teams to build FinTech SaaS solutions to allow banks and financial institutions to be able to report their products and activity to the SEC. 
-          I have created responsive applications, to allow back office staff on their desktops as well as the workers on the ground on their mobile devices, to be able to track product throughout its journey for the trucking industry. I've scaled cloud agnostic environments to be able to increase their performance of their Sales Enablement platform 600 fold.
+          I have created responsive applications, to allow back office staff using desktops as well as the workers on the ground using mobile devices, to be able to track product throughout its journey for the trucking industry. I've scaled cloud agnostic environments to be able to increase their performance of their Sales Enablement platform 600 fold.
         </p>
         <p className="about-text -animation-item">
           I am constantly looking for the next thing to learn or skill to master. I've been lucky to be able to have so many opportunities to be challenged by and to ultimately learn from.

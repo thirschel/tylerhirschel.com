@@ -209,10 +209,6 @@
     border: 4px $matte-blue solid;
     background: linear-gradient(#f1f4ff, #e1e6ff);
     grid-area: 1 / 2 / 3 / 2;
-    &:hover {
-      opacity: 1;
-      transform: translateY(-3px);
-    }
   }
   &:last-child {
     transform: translate3d(100%,0,0) rotatex(90deg);
@@ -221,12 +217,7 @@
   }
   &:not(:first-child) {
     cursor: pointer;
-    transition: .15s ease-in-out;
-    opacity: .8;
-    &:hover {
-      opacity: 1;
-      transform: translateY(-3px);
-    }
+    opacity: 1;
   }
 }
 

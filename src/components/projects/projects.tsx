@@ -35,9 +35,6 @@ const Projects = () => {
               <li>SQL</li>
             </ul>
             <div className="project-link">
-              <a href="https://www.memetrics.net">
-                <ExternalLinkIcon/>
-              </a>
               <a href="https://github.com/thirschel/memetrics-ui">
                 <GithubIcon/>
               </a>

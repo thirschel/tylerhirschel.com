@@ -14,7 +14,7 @@ const Hero = () => {
               <h1 className="hero-title -animation-item">Hey, I'm Tyler</h1>
               <h1 className="hero-subtitle -animation-item">I build<WordFlipper></WordFlipper></h1>
               <p className="hero-explanation -animation-item">
-              I am a Chicago-based software engineer with almost a decade of experience building (and shipping!) software. Currently, I'm at Microsoft focused on making sure the cloud still works when its raining.
+              I am a Chicago-based software engineer with more than a decade of experience building (and shipping!) software. Currently, I'm at Microsoft focused on making sure the cloud still works when its raining.
               </p>
               <button onClick={jumpToContactSection} className="btn contact-btn -animation-item"><span><span>Lets Talk</span></span></button>
             </div>
